@@ -1,9 +1,11 @@
 import os
-path = "C:/scope"
+path = "C:/great"
 os.startfile(path)
 l = []
-for s in os.walk(path):
-        l.append(s)
-for name in l:
-    print(name)
+for root,directories,file in os.walk(path):
+        for files in file:
+                l.append(os.path.join(root,file))
+
+for f in l:
+        print(f)
 
